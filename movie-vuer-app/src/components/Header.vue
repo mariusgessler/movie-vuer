@@ -21,14 +21,30 @@
           Genres
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a  class="dropdown-item" v-for="genre in genres" :key="genre"> {{ genre.name }}  </a>
         </div>
       </li>
-    </ul>
-  
+    </ul>  
   </div>
+  
 </nav>
+
     </div>
+    
 </template>
+
+<script>
+import { mapState } from 'vuex';
+export default {
+  mounted(){
+    this.$store.dispatch('getGenres');
+  },
+  
+  computed: {
+    ...mapState([
+      'genres'
+    ])
+   
+  }
+}
+</script>

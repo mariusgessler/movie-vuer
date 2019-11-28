@@ -9,6 +9,9 @@
             <h1>Upcoming Movies</h1>
             <mvMovieCard :key="upcomingMovie.id" v-for="upcomingMovie in upcomingMovies" :movies="upcomingMovie"></mvMovieCard>
         </div>
+        <ul>
+      <li :key="genre" v-for="genre in genres">Fart: {{genre}}</li>
+        </ul>
     </div>
 </template>
 
@@ -34,7 +37,8 @@ export default {
         ]),
         ...mapState([
             'upcomingMovies'
-        ])
+        ]),
+       
     },
     data(){
         return {
