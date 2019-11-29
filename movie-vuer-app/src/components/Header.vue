@@ -1,45 +1,55 @@
 <template>
-    <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <router-link to="/" class="navbar-brand">Movie Vuer</router-link>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-       <router-link to="/popular" tag="li" activeClass="active">
-         <a class="nav-link">Popular Movies</a>
-        </router-link>
-       <router-link to="/upcoming" tag="li" activeClass="active">
-        <a class="nav-link">Upcoming Movies</a>
-        </router-link>
-       <router-link to="/random" tag="li" activeClass="active">
-        <a class="nav-link">Random Movie</a>
-        </router-link>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Genres
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a  class="dropdown-item" v-for="genre in genres" :key="genre"> {{ genre.name }}  </a>
-        </div>
-      </li>
-    </ul>  
-  </div>
-  
-</nav>
+  <div>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
+      <v-list dense>
+        <v-list-item :key="link.text" v-for="(link) in links" router :to="link.route" @click="drawer=false">
+          <v-list-item-action>
+            <v-icon>{{ link.icon }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ link.text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
-    </div>
-    
+    <v-app-bar
+      app
+      color="success"
+      light
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-spacer/>
+      <v-toolbar-title class="white--text font-weight-light center">MOVIE</v-toolbar-title>
+      <v-toolbar-title class="white--text font-weight-bold">VUER</v-toolbar-title>
+
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 export default {
+  data(){
+    return {
+      selectedGenre:'',
+      links: [
+        { icon: 'mdi-thumb-up-outline', text: 'Popular Movies', route: '/popular'} ,
+        { icon: 'mdi-skip-forward-outline', text: 'Upcoming Movies', route: '/upcoming'},
+        { icon: 'mdi-information-outline', text: 'About', route: '/about'},
+      ],
+      drawer: false
+    }
+  },
   mounted(){
     this.$store.dispatch('getGenres');
   },
-  
+  props: {
+    source: String
+  },
   computed: {
     ...mapState([
       'genres'
@@ -48,3 +58,4 @@ export default {
   }
 }
 </script>
+

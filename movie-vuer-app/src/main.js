@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import store from './store';
 import { routes } from './routes';
 import MovieList from './components/Movies/MovieList';
+import vuetify from './plugins/vuetify';
 
 
 Vue.use(VueRouter);
@@ -19,5 +20,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')

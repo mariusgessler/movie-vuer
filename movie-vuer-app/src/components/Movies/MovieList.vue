@@ -1,18 +1,19 @@
 <template>
-    <div>
-        <div v-if="this.$route.path == '/popular'">
-            <h1>Popular Movies</h1>
-            <mvMovieCard :key="popularMovie.id" v-for="popularMovie in popularMovies" :movies="popularMovie"></mvMovieCard>
-        </div>
-        
-        <div v-else>
-            <h1>Upcoming Movies</h1>
-            <mvMovieCard :key="upcomingMovie.id" v-for="upcomingMovie in upcomingMovies" :movies="upcomingMovie"></mvMovieCard>
-        </div>
-        <ul>
-      <li :key="genre" v-for="genre in genres">Fart: {{genre}}</li>
-        </ul>
-    </div>
+    <v-layout >
+        <v-container class="my-5">
+            <v-row v-if="this.$route.path == '/popular'" justify="center"  >
+                <v-col v-for="popularMovie in popularMovies" :key="popularMovie.id" cols="12" >
+                    <mvMovieCard  :movies="popularMovie"></mvMovieCard>
+                </v-col>
+            </v-row>
+            <v-row v-else justify="center"  >
+                <v-col v-for="upcomingMovie in upcomingMovies" :key="upcomingMovie.id"  cols="12"  >
+                    <mvMovieCard  :movies="upcomingMovie"></mvMovieCard>
+                </v-col>
+            </v-row>
+        </v-container>
+</v-layout>
+   
 </template>
 
 <script>
@@ -21,11 +22,8 @@ import { mapState } from 'vuex';
 
 export default {
     mounted() {
-        if (this.$route.path == "/popular"){
-            this.$store.dispatch('getMovies', ["popular",1])
-        }else if (this.$route.path == "/upcoming"){
-            this.$store.dispatch('getMovies',["upcoming",1])
-        }
+        this.$store.dispatch('getMovies', ["popular",1])
+        this.$store.dispatch('getMovies',["upcoming",1])
     },
     components: {
         mvMovieCard: MovieCard

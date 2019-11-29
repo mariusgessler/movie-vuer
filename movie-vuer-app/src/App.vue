@@ -1,14 +1,10 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <mvHeader/>
-      <div class="row">
-        <div class="col-md-12">
-            <router-view></router-view>
-        </div>
-      </div>
-    </div>
-  </div>
+  <v-app id="app">
+    <mvHeader/>
+    <v-content class="mx-5 mb-4 my-6" >
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -21,6 +17,3 @@ export default {
 }
 </script>
 
-<style>
-
-</style>

@@ -21,7 +21,7 @@ export default new Vuex.Store({
                 const movies = data.results
                 ;
                 /* eslint-disable no-console */
-                // console.log(movies)
+                console.log(movies)
                 /* eslint-enable no-console */
                 if (category == "popular"){
                     commit('SET_POPULAR', movies)
