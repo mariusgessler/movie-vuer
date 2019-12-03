@@ -1,25 +1,25 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueRouter from 'vue-router';
-import store from './store';
-import { routes } from './routes';
-import MovieList from './components/Movies/MovieList';
-import vuetify from './plugins/vuetify';
-
+import Vue from "vue"
+import App from "./App.vue"
+import VueRouter from "vue-router";
+import store from "./store";
+import { routes } from "./routes";
+import MovieList from "./components/Movies/MovieList";
+import Pagination from "./components/Pagination"
+import vuetify from "./plugins/vuetify";
 
 Vue.use(VueRouter);
 Vue.component("mvMovieList", MovieList);
-
+Vue.component("mvPagination", Pagination);
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes
 })
 
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   store,
   vuetify,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app")

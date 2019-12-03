@@ -21,14 +21,14 @@
                 </v-card-action>
               </div>
 
-                <v-img :src="posterPath"  max-width='150px'></v-img>
+                <v-img :src="posterPath"  max-width="150px"></v-img>
             </div>
           </v-card>
              
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 export default {
     props: ["movies"],
     data(){
@@ -39,13 +39,10 @@ export default {
     },
     computed: {
         ...mapState([
-            'genres'
+            "genres"
         ]),
-      
     }
-  
-   
-}
+};
 
 </script>
 
@@ -59,8 +56,6 @@ export default {
     justify-content: space-around;
 }
 
-
-
 @media screen and (max-width: 500px) {
     .mobile-card{
         flex-direction: column-reverse;
@@ -72,27 +67,4 @@ export default {
     }
 
 }
-
 </style>
-    // <v-flex xs12 sm6 md6 lg6 :justify="center" :align="center" > 
-    //         <v-card  >
-    //                             <v-img  :src ="posterPath" height="500"></v-img>
-
-    //             <v-list-item>
-    //                 <v-list-item-content>
-    //                     <v-list-item-title  class="heading" >
-    //                         {{ movies.title }}
-    //                     </v-list-item-title>
-    //                    
-    //                 </v-list-item-content>
-    //             </v-list-item>
-    //             <v-card-text>{{ movies.overview }}</v-card-text>
-    //             <v-card-action>
-    //                 <v-btn text color="success" :href="moreInfoLink" >
-    //                     More Info
-    //                 </v-btn>
-    //             </v-card-action>
-    //         </v-card>
-          
-
-    //     </v-flex>
