@@ -2,7 +2,7 @@
 
 An app, which lets you explore movies and genres.
 
-Take a look at the [live-version](https://movie-vuer.netlify.com/popular).
+Take a look at the [live-version](https://movie-vuer.netlify.com/).
  
 ## Technologies 
 
