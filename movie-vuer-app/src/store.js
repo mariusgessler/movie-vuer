@@ -11,7 +11,7 @@ export default new Vuex.Store({
         popularMovies:[],
         upcomingMovies:[],
         genreMovies: [],
-        genres:[]
+        genres:[],
     },
     actions: {
         getMovies({commit},[category, page]){
@@ -21,17 +21,20 @@ export default new Vuex.Store({
                 const movies = data;
                 if (category == "popular"){
                     commit("SET_POPULAR", movies)
+
                 }else if (category == "upcoming"){
                     commit("SET_UPCOMING", movies)
-                };
+                }  
             })
             .catch(error => {
                 alert(error)
             });
+           
         },
         getMovieByGenre({commit}, [genre, page]){
             fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre}&page=${page}`)
             .then(response => response.json())
+
             .then((data) => {
                 const genreMovies = data;
                 commit("SET_MOVIE_BY_GENRE", genreMovies)
@@ -65,6 +68,7 @@ export default new Vuex.Store({
         SET_GENRE(state, genres){
             state.genres = genres;
         },
+      
     }
 
 }) 

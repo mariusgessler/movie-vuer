@@ -4,8 +4,9 @@ import GenreMovies from "./components/Movies/GenreMovies";
 import About from "./components/About";
 
 export const routes = [
-    {path: "/", component: PopularMovies},
+    {path: "/popular", component: PopularMovies},
     {path: "/upcoming", component: UpcomingMovies},
     {path:"/genre", component: GenreMovies},
-    {path:"/about", component: About}
+    {path:"/about", component: About},
+    {path: "/", redirect: "/popular"}
 ];

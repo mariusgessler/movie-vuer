@@ -17,8 +17,8 @@ export default {
         },
         computed: {
             ...mapState([
-                "popularMovies"
-            ])
+                "popularMovies",    
+            ]),
         }
 };
 </script>

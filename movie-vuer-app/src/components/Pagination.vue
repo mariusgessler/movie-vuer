@@ -25,11 +25,11 @@ export default {
                 } else if (this.requestingComponent == "/upcoming"){
                     this.$store.dispatch("getMovies",["upcoming", this.page])
                 } else {
-                    eventBus.$on("genreChanged", page => {
+                    eventBus.$on("genreChanged",() => {
                     this.page = 1
                  });
                     this.$store.dispatch("getMovieByGenre", [this.requestingComponent, this.page])
-            };
+            }
         } 
     }    
 };
