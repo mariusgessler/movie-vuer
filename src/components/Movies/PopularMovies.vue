@@ -7,18 +7,18 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState } from 'vuex';
 
 export default {
-        data(){
-            return {
-            page: 1
-            };
-        },
-        computed: {
-            ...mapState([
-                "popularMovies",    
-            ]),
-        }
+  data() {
+    return {
+      page: 1,
+    };
+  },
+  computed: {
+    ...mapState([
+      'popularMovies',
+    ]),
+  },
 };
 </script>

@@ -30,30 +30,30 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
+
 export default {
-  data(){
+  data() {
     return {
-      selectedGenre:"",
+      selectedGenre: '',
       links: [
-        { icon: "mdi-thumb-up-outline", text: "Popular Movies", route: "/popular"} ,
-        { icon: "mdi-skip-forward-outline", text: "Upcoming Movies", route: "/upcoming"},
-        { icon: "mdi-drama-masks", text: "Browse by Genre", route: "/genre"},
-        { icon: "mdi-information-outline", text: "About", route: "/about"},
+        { icon: 'mdi-thumb-up-outline', text: 'Popular Movies', route: '/popular'} ,
+        { icon: 'mdi-skip-forward-outline', text: 'Upcoming Movies', route: '/upcoming'},
+        { icon: 'mdi-drama-masks', text: 'Browse by Genre', route: '/genre'},
+        { icon: 'mdi-information-outline', text: 'About', route: '/about'},
       ],
-      drawer: false
-    }
+      drawer: false,
+    };
   },
-  mounted(){
-    this.$store.dispatch("getGenres");
+  mounted() {
+    this.$store.dispatch('getGenres');
   },
-  props: 
-    ["source"],
+  props:
+    ['source'],
   computed: {
     ...mapState([
-      "genres"
-    ])
-  }
+      'genres',
+    ]),
+  },
 };
 </script>
-
