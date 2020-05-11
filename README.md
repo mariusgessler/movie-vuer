@@ -1,6 +1,6 @@
 # Movie Vuer
 
-An [ app_](https://movie-vuer.netlify.app/popular), which lets you explore movies and genres.
+An [ app_](https://movie-vuer.netlify.app/), which lets you explore movies and genres.
  
 ## Technologies 
 
