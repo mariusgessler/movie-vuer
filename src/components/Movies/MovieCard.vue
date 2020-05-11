@@ -43,23 +43,21 @@ export default {
 
 <style>
 .v-card {
-    margin: 0 auto
+  margin: 0 auto
 }
 .info-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 @media screen and (max-width: 500px) {
-    .mobile-card{
-        flex-direction: column-reverse;
-    }
-
-    .v-image {
-        width: 100%;
-        margin: 0 auto;
-    }
-
+  .mobile-card{
+   flex-direction: column-reverse;
+  }
+  .v-image {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 </style>

@@ -6,18 +6,21 @@
         </v-col>
           <v-col class="d-flex" cols="12" sm="2">
             <v-select
-                :items="genres"
-                name="genre"
-                v-model="selectedGenre"
-                item-text="name"
-                item-value="id"
-                label="Select a Genre"
-                color="light-green"
+              :items="genres"
+              name="genre"
+              v-model="selectedGenre"
+              item-text="name"
+              item-value="id"
+              label="Select a Genre"
+              color="light-green"
             ></v-select>
           </v-col>
       </v-row>
       <mvMovieList :selectedGenre="selectedGenre"/>
-      <mvPagination :page="page" :totalNumOfPages="genreMovies.total_pages" :requestingComponent="this.selectedGenre"/>
+      <mvPagination
+        :page="page"
+        :totalNumOfPages="genreMovies.total_pages"
+        :requestingComponent="this.selectedGenre"/>
     </div>
 </template>
 

@@ -2,7 +2,10 @@
     <div class="upcoming">
         <h1 class="headline font-weight-light">Upcoming Movies</h1>
         <mvMovieList />
-        <mvPagination :v-model="page" :totalNumOfPages="upcomingMovies.total_pages" :requestingComponent="this.$route.path"/>
+        <mvPagination
+          :v-model="page"
+          :totalNumOfPages="upcomingMovies.total_pages"
+          :requestingComponent="this.$route.path"/>
     </div>
 </template>
 

@@ -15,14 +15,13 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
     <v-app-bar
       app
       color="success"
       light
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-spacer/>
+      <v-spacer />
       <v-toolbar-title class="white--text font-weight-light center">MOVIE</v-toolbar-title>
       <v-toolbar-title class="white--text font-weight-bold">VUER</v-toolbar-title>
     </v-app-bar>

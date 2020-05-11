@@ -22,7 +22,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import MovieCard from './MovieCard';
+import MovieCard from './MovieCard.vue';
 
 export default {
   beforeMount() {

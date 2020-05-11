@@ -5,7 +5,7 @@
       :length="totalNumOfPages"
     >{{page}}</v-pagination>
   </div>
-  </template>
+</template>
 
 <script>
 import { eventBus } from '../eventBus';

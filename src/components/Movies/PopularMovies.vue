@@ -2,7 +2,10 @@
     <div class="popular">
         <h1 class="headline font-weight-light">Popular Movies</h1>
         <mvMovieList/>
-        <mvPagination :page="page" :totalNumOfPages="popularMovies.total_pages" :requestingComponent="this.$route.path" />
+        <mvPagination
+          :page="page"
+          :totalNumOfPages="popularMovies.total_pages"
+          :requestingComponent="this.$route.path" />
     </div>
 </template>
 
