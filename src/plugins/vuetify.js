@@ -4,8 +4,8 @@ import '@mdi/font/css/materialdesignicons.css';
 
 
 Vue.use(Vuetify, {
-    theme: {
-    }
+  theme: {
+  },
 });
 
 export default new Vuetify({
