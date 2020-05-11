@@ -11,7 +11,7 @@
         </div>
           <v-card-subtitle class="pt-0"  v-text="movies.overview" />
         <v-card-action>
-          <v-btn block  outline elevation text color="success" :href="moreInfoLink" >
+          <v-btn block elevation text color="success" :href="moreInfoLink" >
             More Info
           </v-btn>
         </v-card-action>

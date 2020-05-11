@@ -1,7 +1,7 @@
-import PopularMovies from './components/Movies/PopularMovies';
-import UpcomingMovies from './components/Movies/UpcomingMovies';
-import GenreMovies from './components/Movies/GenreMovies';
-import About from './components/About';
+import PopularMovies from './components/Movies/PopularMovies.vue';
+import UpcomingMovies from './components/Movies/UpcomingMovies.vue';
+import GenreMovies from './components/Movies/GenreMovies.vue';
+import About from './components/About.vue';
 
 export const routes = [
   { path: '/popular', component: PopularMovies },
