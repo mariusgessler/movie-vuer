@@ -9,4 +9,5 @@ export const routes = [
   { path: '/genre', component: GenreMovies },
   { path: '/about', component: About },
   { path: '/', redirect: '/popular' },
+  { path: '*', redirect: '/popular' },
 ];
